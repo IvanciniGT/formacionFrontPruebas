@@ -301,7 +301,7 @@ Ejemplo:
     Frontend: Un servicio para interactuar con un Backend de animalitos
         interface AnimalitosService {
             List<Animalito> getAnimalitos();
-            Animalito getAnimalito(long id);
+            Animalito getAnimalito(long id);                        Animalito|undefined getAnimalito(long id);
             Animalito altaDeAnimalito(DatosDeNuevoAnimalito animalito);
         }
 
@@ -357,11 +357,11 @@ API backend: diccionarios-api <- JAVA  ---> diccionarios-api-v1-0-0.jar
     package com.diccionarios.api;
         public interface Diccionario {
             boolean existe(String palabra);
-            List<String> getSignificados(String palabra);
+            Optional<List<String>> getSignificados(String palabra);
         }
         public interface SuministradorDeDiccionarios {
             boolean tienesDiccionarioDe(String idioma);
-            Diccionario getDiccionario(String idioma);
+            Optional<Diccionario> getDiccionario(String idioma);
         }
 
 Implementación de ese API: Una donde los diccionarios se almacenen en Ficheros, BBDD, Serv rest.
