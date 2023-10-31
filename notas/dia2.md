@@ -194,3 +194,24 @@ Kotlin
 .scala --> compilan a ---> .class  -> JVM
                             ^
                             byte-code
+
+---
+
+El API de un backend qué define? OpenAPI (3) (Swagger1 y 2)
+
+- endpoints
+  /animalitos
+    METODOS:
+        GET
+            200 OK -> [Animalito] 
+            500 NOK -> { error: "..." }
+
+
+---
+
+Nosotros ahora estamos montando una capa por encima de ese API REST
+
+   ComponenteWEB-ListadoDeAnimalitos            -->   ServicioFrontal ----> API REST
+                -DetalleDeUnAnimalito           -->   Animalito             Animalito{id: number, name: string, type: string, age: number}
+                -FormularioEdiciónDeUnAnimalito -->   {id: number, nombre: string, tipo: string, edad: number} << mapper
+                -FormularioDeNuevoAnimalito     -->
