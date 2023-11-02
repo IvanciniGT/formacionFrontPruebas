@@ -3,6 +3,8 @@ import {Animalito} from '../Animalito.js'
 import chai from "chai"
 import sinon from "sinon"
 import { DatosDeNuevoAnimalito } from '../DatosDeNuevoAnimalito.js'
+// import "../config.js"
+//import {Response} from 'node-fetch'
 
 const URL_BACKEND = "/animalitos"
 chai.should()

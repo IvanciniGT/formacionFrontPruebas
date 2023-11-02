@@ -1,5 +1,7 @@
 import sinon from 'sinon';
 import { Animalito } from '../Animalito.js';
+//import "../config.js"
+//import {Response} from 'node-fetch'
 
 class AnimalitosBackendFake {
 

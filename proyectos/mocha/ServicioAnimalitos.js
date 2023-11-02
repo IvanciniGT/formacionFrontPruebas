@@ -1,5 +1,6 @@
 
 import {crearAnimalito} from './AnimalitosMapper.js'
+//import "./config.js"
 export class AnimalitosService {
 
     constructor(backend){
