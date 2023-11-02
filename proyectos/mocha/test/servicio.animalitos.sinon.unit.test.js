@@ -46,7 +46,7 @@ describe('AnimalitosService', () => { // Esta es la función que debe ejecutarse
 
     describe('Recuperación de un animalito existente mediante su ID', () => { // Esta es la función que debe ejecuatse para probar ese servicio
         it('Debe devolver un animalito con el ID suministrado y con los datos guays', async () => { // Defino la validación
-            let nuevoAnimalito = new Animalito(nombre, edad, tipo, -50)
+            let nuevoAnimalito = new Animalito("Pipo", 3, "Gato", -50)
             fetchStub.withArgs("/animalitos/-50").resolves(crearRespuestaHttp(200, nuevoAnimalito))
                     // ^ Me aseguro que se llama al backend adecuado
             let animalitoRecuperado = await animalitosService.getAnimalito(nuevoAnimalito.id)
@@ -90,10 +90,11 @@ describe('AnimalitosService', () => { // Esta es la función que debe ejecutarse
     describe('Alta de un animalito con datos guays', () => { // Esta es la función que debe ejecuatse para probar ese servicio
         let datosDeNuevoAnimalito = new DatosDeNuevoAnimalito("Fire", 3, "Perro")
 
-
         it('Debe devolver un animalito con id mayor que cero, y con los datos guays', async () => { // Defino la validación
             let animalito = animalitosService.altaDeAnimalito(datosDeNuevoAnimalito)
         })
     })
 
 } )
+
+console.log(global.fetch)
