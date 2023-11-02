@@ -54,12 +54,17 @@ describe("Probar que mi formulario de login funciona bien", () => {
         // Hacer click en el botón de login: button[btn-login]
         await navegador.findElement(By.id("btn-login")).click();
         // Debo llegar a la ruta: https://katalon-demo-cura.herokuapp.com/#appointment
-        let textoFallo = await navegador.findElementBy.css(".text-danger").getText()
+        let textoFallo = await navegador.findElement(By.css(".text-danger")).getText()
+        // XPATH
+        textoFallo = await navegador.findElement(By.xpath("//section[@id='login']//p[contains(text(),'failed')]")).getText()
 
-        // Y hasta aquí llega WEBDRIVER
         chai.expect(textoFallo).to.equal("Login failed! Please ensure the username and password are valid.");
 
     });
-    
+    // Dejar los campos en blanco
+    // Dejar el campo de usuario en blanco
+    // Dejar el campo de contraseña en blanco
+    // Usuario OK con contraseña NOK
+    // Usuario NOK con contraseña OK
 
 });
