@@ -38,7 +38,28 @@ describe("Probar que mi formulario de login funciona bien", () => {
     });
 
 
-    it("No se puede hacer login cuando los datos son incorrectos", () => {});
+    it("No se puede hacer login cuando los datos son incorrectos", async () => {
+        // Lo primero, acceder a la página web
+        await navegador.get("https://katalon-demo-cura.herokuapp.com/");
+        // Podría fijar un determinado tamaño de ventana
+        await navegador.manage().window().setSize(1024, 768);
+
+        // Llegados a este punto, el código va a ser: Buscar elemento, interactuar con él
+        // Apretar en el botón MAKE APPOINTMENT -> a[btn-make-appointment]
+        await navegador.findElement(By.id("btn-make-appointment")).click();
+        // John Doe -> input[txt-username]
+        await navegador.findElement(By.id("txt-username")).sendKeys("Federico");
+        // ThisIsNotAPassword -> input[txt-password]
+        await navegador.findElement(By.id("txt-password")).sendKeys("ThisIsNotAPassword");
+        // Hacer click en el botón de login: button[btn-login]
+        await navegador.findElement(By.id("btn-login")).click();
+        // Debo llegar a la ruta: https://katalon-demo-cura.herokuapp.com/#appointment
+        let textoFallo = await navegador.findElementBy.css(".text-danger").getText()
+
+        // Y hasta aquí llega WEBDRIVER
+        chai.expect(textoFallo).to.equal("Login failed! Please ensure the username and password are valid.");
+
+    });
     
 
 });
