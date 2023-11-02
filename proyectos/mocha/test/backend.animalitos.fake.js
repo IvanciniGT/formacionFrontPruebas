@@ -5,21 +5,21 @@ class AnimalitosBackendFake {
 
     constructor() {
         this.entorno = sinon.createSandbox(); // Entorno trampeado donde ejecutar mis pruebas
-        this.miFakeServer = this.entorno.stub(global, 'fetch');
             // Cuando a partir de ahora, se llame a la función "fetch"... quiero que en lugar de la función original,
             // Se invoque a una nueva que sinon va a crear para mi... y que por defecto, devolverá nada!
-        this.animalitos=[]
-        this.miFakeServer.withArgs("/animalitos").resolves(this.crearRespuestaHttp(200,this.animalitos))
+        this.resetearElEntornoDePruebas()
     }
 
     cargarAnimalitoDePruebas(animalito){
         this.animalitos.push(animalito)
         this.miFakeServer.withArgs("/animalitos/"+animalito.id).resolves(this.crearRespuestaHttp(200,animalito))
+        this.miFakeServer.withArgs("/animalitos").resolves(this.crearRespuestaHttp(200,this.animalitos))
     }
 
     borrarAnimalitoDePruebas(animalito){
         this.animalitos = this.animalitos.filter((animalitoEnLaLista) => animalitoEnLaLista.id != animalito.id)
         this.miFakeServer.withArgs("/animalitos/"+animalito.id).resolves(this.crearRespuestaHttp(404,undefined))
+        this.miFakeServer.withArgs("/animalitos").resolves(this.crearRespuestaHttp(200,this.animalitos))
     }
 
     modificarAnimalitoDePruebas(animalito){
@@ -31,10 +31,14 @@ class AnimalitosBackendFake {
             }
         })
         this.miFakeServer.withArgs("/animalitos/"+animalito.id).resolves(animalito)
+        this.miFakeServer.withArgs("/animalitos").resolves(this.crearRespuestaHttp(200,this.animalitos))
     }
 
     resetearElEntornoDePruebas(){
         this.entorno.restore()
+        this.miFakeServer = this.entorno.stub(global, 'fetch');
+        this.animalitos=[]
+        this.miFakeServer.withArgs("/animalitos").resolves(this.crearRespuestaHttp(200,this.animalitos))
     }
 
     crearRespuestaHttp(status, body){
