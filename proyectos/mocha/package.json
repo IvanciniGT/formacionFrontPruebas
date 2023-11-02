@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "npx mocha",
+    "test-sinon": "npx mocha **/*sinon.unit.test.js",
     "start-test-backend": "cp -f json.server/animalito.template.json json.server/animalitos.json & json-server json.server/animalitos.json --port 3001"
   },
   "author": "",
