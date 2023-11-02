@@ -93,7 +93,28 @@ describe('AnimalitosService', () => { // Esta es la función que debe ejecutarse
         let datosDeNuevoAnimalito = new DatosDeNuevoAnimalito("Fire", 3, "Perro")
 
         it('Debe devolver un animalito con id mayor que cero, y con los datos guays', async () => { // Defino la validación
+            // Configurar la respuesta que debe devolver sinon
+            let nuevoAnimalito = new Animalito(datosDeNuevoAnimalito.nombre, datosDeNuevoAnimalito.edad, datosDeNuevoAnimalito.tipo, 68)
+            fetchStub.resolves(crearRespuestaHttp(201, nuevoAnimalito))
+
             let animalito = animalitosService.altaDeAnimalito(datosDeNuevoAnimalito)
+            // Esto nos devolvía una promesa con los datos del animalito... y un id
+            // El servicio de Backend debe devolver ese ID, junto con el resto de datos y además un código de estado 201
+            animalito = await animalito // Espera a que la promesa del animalito se resuelva
+            animalito.id.should.equal(68)             // Sintaxis basada en requisitos
+            animalito.nombre.should.be.equal(datosDeNuevoAnimalito.nombre)
+            animalito.edad.should.be.equal(datosDeNuevoAnimalito.edad)
+            animalito.tipo.should.be.equal(datosDeNuevoAnimalito.tipo)
+            // ^ Hasta aquí sería lo que montaríamos si estuviéramos haciendo una prueba de caja negra!
+            // Haciendo lo que llamamos una prueba de caja blanca, vamos a comprobar que el servicio de backend
+            // al que se llama es al que esperamos que se llame
+            sinon.assert.calledWith(fetchStub, "/animalitos", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datosDeNuevoAnimalito)
+            })
         })
     })
 

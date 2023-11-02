@@ -52,10 +52,13 @@ export class AnimalitosService {
                 if(response.status == 201){
                     resolve(response.json()).then((animalitoRecibido) => {
                         resolve(crearAnimalito(animalitoRecibido)) // Establecer el valor de la promesa que he devuelto
-                    })
+                    }) // Error. El servidor no me ha dado una respuesta JSON válida... BUG en el servidor
                 } else {
                     reject(response.status) // Establezco que la promesa que he devuelto ha ido mal
                 }
+            })// Que no haya respuesta... sino un error
+            .catch((error) => {
+                reject(error)
             })
         })
         return promesaADevolver
