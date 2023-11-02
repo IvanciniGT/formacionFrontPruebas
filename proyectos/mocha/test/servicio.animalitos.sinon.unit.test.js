@@ -2,6 +2,7 @@ import {AnimalitosService} from '../ServicioAnimalitos.js'
 import {Animalito} from '../Animalito.js'
 import chai from "chai"
 import sinon from "sinon"
+import { DatosDeNuevoAnimalito } from '../DatosDeNuevoAnimalito.js'
 
 const URL_BACKEND = "/animalitos"
 chai.should()
@@ -42,9 +43,6 @@ describe('AnimalitosService', () => { // Esta es la función que debe ejecutarse
 
     // Preparación
     let animalitosService = new AnimalitosService(URL_BACKEND)
-    let nombre = 'Pepito'
-    let edad = 3
-    let tipo = 'Perro'
 
     describe('Recuperación de un animalito existente mediante su ID', () => { // Esta es la función que debe ejecuatse para probar ese servicio
         it('Debe devolver un animalito con el ID suministrado y con los datos guays', async () => { // Defino la validación
@@ -87,6 +85,14 @@ describe('AnimalitosService', () => { // Esta es la función que debe ejecutarse
                 listaDeAnimalitosRecuperados.forEach((animalitoRecuperado, indice) => {
                     compararAnimalitos(animalitoRecuperado, listaDeAnimalitos[indice])
                 })
+        })
+    })
+    describe('Alta de un animalito con datos guays', () => { // Esta es la función que debe ejecuatse para probar ese servicio
+        let datosDeNuevoAnimalito = new DatosDeNuevoAnimalito("Fire", 3, "Perro")
+
+
+        it('Debe devolver un animalito con id mayor que cero, y con los datos guays', async () => { // Defino la validación
+            let animalito = animalitosService.altaDeAnimalito(datosDeNuevoAnimalito)
         })
     })
 
