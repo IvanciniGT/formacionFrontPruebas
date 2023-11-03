@@ -27,15 +27,17 @@ export class AnimalitosService {
         let promesaADevolver = new Promise((resolve, reject) => {
             fetch(`${this.backend}/${id}`)
             .then((response) => {
-                if(response.status == 200){
+                if(response.status === 200){
                     resolve(response.json()).then((animalitoRecibido) => {
                         resolve(crearAnimalito(animalitoRecibido)) // Establecer el valor de la promesa que he devuelto
                     })
-                } else if(response.status == 404){
+                } else if(response.status === 404){
                     resolve(undefined) // Establecer el valor de la promesa que he devuelto
                 } else {
                     reject(response.status) // Establezco que la promesa que he devuelto ha ido mal
                 }
+            }).catch((error) => {
+                reject(error)
             })
         })
         return promesaADevolver
