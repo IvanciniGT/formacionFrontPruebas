@@ -5,11 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js",
+    "start-test-backend": "cp -f json.server/animalito.template.json json.server/animalitos.json & json-server json.server/animalitos.json --port 3001"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@cucumber/cucumber": "^10.0.1"
+    "@cucumber/cucumber": "^10.0.1",
+    "chai": "^4.3.10",
+    "json-server": "^0.17.4"
   }
 }
