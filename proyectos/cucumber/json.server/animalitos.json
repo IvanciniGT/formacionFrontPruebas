@@ -869,6 +869,180 @@
       "edad": 2,
       "tipo": "Perro",
       "id": 145
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 146
+    },
+    {
+      "nombre": "Juanito",
+      "edad": 3,
+      "tipo": "Gato",
+      "id": 147
+    },
+    {
+      "nombre": "Pepita",
+      "edad": 4,
+      "tipo": "Perro",
+      "id": 148
+    },
+    {
+      "nombre": "Juanita",
+      "edad": 5,
+      "tipo": "Gato",
+      "id": 149
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 150
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 151
+    },
+    {
+      "nombre": "Juanito",
+      "edad": 3,
+      "tipo": "Gato",
+      "id": 152
+    },
+    {
+      "nombre": "Pepita",
+      "edad": 4,
+      "tipo": "Perro",
+      "id": 153
+    },
+    {
+      "nombre": "Juanita",
+      "edad": 5,
+      "tipo": "Gato",
+      "id": 154
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 155
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 156
+    },
+    {
+      "nombre": "Juanito",
+      "edad": 3,
+      "tipo": "Gato",
+      "id": 157
+    },
+    {
+      "nombre": "Pepita",
+      "edad": 4,
+      "tipo": "Perro",
+      "id": 158
+    },
+    {
+      "nombre": "Juanita",
+      "edad": 5,
+      "tipo": "Gato",
+      "id": 159
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 160
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 161
+    },
+    {
+      "nombre": "Juanito",
+      "edad": 3,
+      "tipo": "Gato",
+      "id": 162
+    },
+    {
+      "nombre": "Pepita",
+      "edad": 4,
+      "tipo": "Perro",
+      "id": 163
+    },
+    {
+      "nombre": "Juanita",
+      "edad": 5,
+      "tipo": "Gato",
+      "id": 164
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 165
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 166
+    },
+    {
+      "nombre": "Juanito",
+      "edad": 3,
+      "tipo": "Gato",
+      "id": 167
+    },
+    {
+      "nombre": "Pepita",
+      "edad": 4,
+      "tipo": "Perro",
+      "id": 168
+    },
+    {
+      "nombre": "Juanita",
+      "edad": 5,
+      "tipo": "Gato",
+      "id": 169
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 170
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 171
+    },
+    {
+      "nombre": "Juanito",
+      "edad": 3,
+      "tipo": "Gato",
+      "id": 172
+    },
+    {
+      "nombre": "Pepita",
+      "edad": 4,
+      "tipo": "Perro",
+      "id": 173
+    },
+    {
+      "nombre": "Pepito",
+      "edad": 2,
+      "tipo": "Perro",
+      "id": 174
     }
   ]
 }
