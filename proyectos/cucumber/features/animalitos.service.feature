@@ -2,9 +2,11 @@
 
 Característica: Servicio de Animalitos
 
-    Esquema del escenario:  Alta de un animalito cuando tengo datos ok
+    Antecedentes:  Necesitamos un servicio de animalitos para poder gestionarlos
         Dado        que tengo un servicio de animalitos que trabaja con un backend de prueba
-        Y           que tengo un nuevo animalito
+
+    Esquema del escenario:  Alta de un animalito cuando tengo datos ok
+        Dado           que tengo un nuevo animalito
         Y           que ese animalito tiene por "nombre": "<nombre>"
         Y           que ese animalito tiene por "tipo": "<tipo>"
         Y           que ese animalito tiene por "edad": <edad>
@@ -23,8 +25,7 @@ Característica: Servicio de Animalitos
             | Juanita | Gato  | 5    |
 
     Escenario:  Recuperar un animalito existente en el backend
-        Dado        que tengo un servicio de animalitos que trabaja con un backend de prueba
-        Y           que tengo un nuevo animalito
+        Dado        que tengo un nuevo animalito
         Y           que ese animalito tiene por "nombre": "Pepito"
         Y           que ese animalito tiene por "tipo": "Perro"
         Y           que ese animalito tiene por "edad": 2
@@ -39,7 +40,6 @@ Característica: Servicio de Animalitos
 
 
     Escenario:  Recuperar un animalito no existente en el backend
-        Dado        que tengo un servicio de animalitos que trabaja con un backend de prueba
         Cuando      solicito el animalito con id: -78
         Entonces    se no devuelve un animalito
 

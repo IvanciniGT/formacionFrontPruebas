@@ -1,14 +1,14 @@
-import { Given, When, Then, Before } from '@cucumber/cucumber';
+import { Given, When, Then, Before, After } from '@cucumber/cucumber';
 import { DatosDeNuevoAnimalito } from '../../DatosDeNuevoAnimalito.js';
 import { AnimalitosService } from '../../ServicioAnimalitos.js';
 import chai from 'chai';
 
 Before( async function () {
-    const URL_BACKEND = "http://localhost:3001/animalitos"
-    this.animalitosService = new AnimalitosService(URL_BACKEND)
 });
 
 Given('que tengo un servicio de animalitos que trabaja con un backend de prueba', function () {
+    const URL_BACKEND = "http://localhost:3001/animalitos"
+    this.animalitosService = new AnimalitosService(URL_BACKEND)
 });
 
 Given('que tengo un nuevo animalito', function () {
