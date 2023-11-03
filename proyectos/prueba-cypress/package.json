@@ -1,0 +1,15 @@
+{
+  "name": "prueba-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-dev": "cypress open",
+    "test": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.4.0"
+  }
+}

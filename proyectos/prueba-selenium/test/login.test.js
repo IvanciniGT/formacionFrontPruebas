@@ -24,7 +24,7 @@ describe("Probar que mi formulario de login funciona bien",function() {
         // Cerrar el navegador
         await navegador.quit();
     });
-    it("Acceder a google", async () => {
+    it("Acceder a wikipedia", async () => {
         // Lo primero, acceder a la página web
         await navegador.get("https://wikipedia.es/");
 
